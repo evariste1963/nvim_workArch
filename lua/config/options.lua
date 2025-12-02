@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 999 -- keeps cursor in center of screnn vertically
+vim.opt.statuscolumn = "%s %l %r "
 
 -- ============================================
 -- Neovide-specific configuration (updated)
@@ -10,7 +11,7 @@ vim.opt.scrolloff = 999 -- keeps cursor in center of screnn vertically
 
 if vim.g.neovide then
   -- Only set opacity; leave everything else as-is
-  vim.g.neovide_opacity = 0.9
+  vim.g.neovide_opacity = 0.95
 
   -- Optional: allow your colorscheme to show through
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
