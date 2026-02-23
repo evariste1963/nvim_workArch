@@ -17,3 +17,11 @@ if vim.g.neovide then
   --   vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
   -- end, { noremap = true, silent = true })
 end
+
+-- vim.cmd('cnoreabbrev <expr> qa (getcmdtype() == ":" && getcmdline() == "qa") ? "qa!" : "qa"') -- use qa instead of qa!, which is a real pain!.-- Hide ^M in files with CRLF line endings by treating them as DOS files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.ps1",
+  callback = function()
+    vim.bo.fileformat = "dos"
+  end,
+})
