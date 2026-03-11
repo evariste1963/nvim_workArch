@@ -18,6 +18,8 @@ if vim.g.neovide then
   -- end, { noremap = true, silent = true })
 end
 
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "none" })
+
 -- vim.cmd('cnoreabbrev <expr> qa (getcmdtype() == ":" && getcmdline() == "qa") ? "qa!" : "qa"') -- use qa instead of qa!, which is a real pain!.-- Hide ^M in files with CRLF line endings by treating them as DOS files
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.ps1",
